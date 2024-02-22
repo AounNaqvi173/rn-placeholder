@@ -1,5 +1,5 @@
-import React from "react";
-import { Animated, StyleSheet, View, ViewProps } from "react-native";
+import React, { FC } from "react";
+import { Animated, StyleSheet, View, ViewProps, ViewStyle } from "react-native";
 import { useAnimation } from "./animations/context";
 import { COLORS, SIZES } from "./tokens";
 
@@ -13,10 +13,11 @@ export interface PlaceholderLineProps extends ViewProps {
   /* Defines if a line should have a margin bottom or not, default is false */
   noMargin?: boolean;
   /* Customize the style of the underlying View component */
-  style?: ViewProps["style"];
+  style?: ViewStyle;
 }
 
-export const PlaceholderLine: React.FC<PlaceholderLineProps> = ({
+
+export const PlaceholderLine: FC<PlaceholderLineProps> = ({
   height = SIZES.normal,
   color = COLORS.primary,
   width = 100,
@@ -31,10 +32,9 @@ export const PlaceholderLine: React.FC<PlaceholderLineProps> = ({
     backgroundColor,
     borderRadius,
     height,
+    width: `${width}`,
     marginBottom,
-    width: `${width}%`,
-  };
-
+  }
   const animationStyle = useAnimation();
 
   return (
