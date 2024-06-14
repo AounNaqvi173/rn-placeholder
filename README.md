@@ -18,7 +18,7 @@ Display some placeholder stuff before rendering your text or media content in Re
 ## Installation
 
 ```javascript
-$ yarn add rn-placeholder
+$ npm i https://github.com/AounNaqvi173/rn-placeholder.git
 ```
 
 ## In your code
